@@ -3,7 +3,6 @@ let sum = 33;
 for (let i = 0; i < arr.length;i++){
     let sub = []
     for (let j = i; j < arr.length; j++){
-     
            sub.push(arr[j]);
             
       
