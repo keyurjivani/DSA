@@ -73,9 +73,20 @@
 // // Quetion : 3
 
 
+let str = "dsanode";
+let string = [...str]
+console.log(string);
 
-
-
+for(let i = 0; i <str.length; i++)
+{
+    let count = 0;
+    for(let j = 0; j < str.length; j++){
+        if(str[i]==str[j]){
+            count++;
+        }
+    }
+    console.log(str[i], count)
+}
 
 
 
