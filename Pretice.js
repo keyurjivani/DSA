@@ -90,49 +90,88 @@
 
 
 
-class stack{
-    constructor(){
-        this.stack = [];
-        this.index = -1;
-    }
+// class stack{
+//     constructor(){
+//         this.stack = [];
+//         this.index = -1;
+//     }
 
-    push(value){
-        this.stack[++this.index] = value
-    }
+//     push(value){
+//         this.stack[++this.index] = value
+//     }
 
-    pop(){
-        if(this.index > -1){
-            return this.stack[this.index--] = ''
-        }else{
-            return 'Stack is empty'
+//     pop(){
+//         if(this.index > -1){
+//             return this.stack[this.index--] = ''
+//         }else{
+//             return 'Stack is empty'
+//         }
+//     }
+
+//     peak(){
+//         return this.stack[this.index];
+//     }
+
+//     isempty(){
+//         if(this.index == -1){
+//             return "stk is empty";
+//         }else{
+//             return "stk not empty";
+//         }
+//     }
+
+
+// }
+
+// let stk = new stack()
+// stk.push(10)
+// stk.push(20)
+// stk.push(30)
+// stk.push(40)
+// stk.pop()
+// console.log(stk.peak());
+
+// console.log(stk.isempty());
+
+// console.log(stk);
+
+
+
+
+// const FindValue = (nums, target) => {
+//     let arr = [];
+//     let num_length = nums.length;
+    
+//     let middle = Math.floor(num_length / 2);
+    
+//     for (let i = middle; i < num_length; i++) {
+//         if (nums[i] == target) {
+//             arr.push(i); 
+//         }
+//     }
+    
+//     if (arr.length === 0) {
+//         return [-1, -1];
+//     }
+    
+//     return arr; 
+// }
+
+// let nums = [5, 7, 7, 8, 8, 10];
+// let target = 9;
+
+// console.log(FindValue(nums, target)); 
+
+
+nums = [1,2,1,3,5,6,4]
+const findPeakElement = (nums) =>{
+    
+    let swap = 0
+    for(let i = 0 ; i < nums.length; i++) {
+        if(nums[i] < nums[i+1]) {
+            swap = i+1
         }
     }
-
-    peak(){
-        return this.stack[this.index];
-    }
-
-    isempty(){
-        if(this.index == -1){
-            return "stk is empty";
-        }else{
-            return "stk not empty";
-        }
-    }
-
-
-}
-
-let stk = new stack()
-stk.push(10)
-stk.push(20)
-stk.push(30)
-stk.push(40)
-stk.pop()
-console.log(stk.peak());
-
-console.log(stk.isempty());
-
-console.log(stk);
-
-
+    return swap;
+};
+console.log(findPeakElement(nums));
