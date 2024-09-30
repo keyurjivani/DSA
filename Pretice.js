@@ -73,20 +73,66 @@
 // // Quetion : 3
 
 
-let str = "dsanode";
-let string = [...str]
-console.log(string);
+// let str = "dsanode";
+// let string = [...str]
+// console.log(string);
 
-for(let i = 0; i <str.length; i++)
-{
-    let count = 0;
-    for(let j = 0; j < str.length; j++){
-        if(str[i]==str[j]){
-            count++;
+// for(let i = 0; i <str.length; i++)
+// {
+//     let count = 0;
+//     for(let j = 0; j < str.length; j++){
+//         if(str[i]==str[j]){
+//             count++;
+//         }
+//     }
+//     console.log(str[i], count)
+// }
+
+
+
+class stack{
+    constructor(){
+        this.stack = [];
+        this.index = -1;
+    }
+
+    push(value){
+        this.stack[++this.index] = value
+    }
+
+    pop(){
+        if(this.index > -1){
+            return this.stack[this.index--] = ''
+        }else{
+            return 'Stack is empty'
         }
     }
-    console.log(str[i], count)
+
+    peak(){
+        return this.stack[this.index];
+    }
+
+    isempty(){
+        if(this.index == -1){
+            return "stk is empty";
+        }else{
+            return "stk not empty";
+        }
+    }
+
+
 }
 
+let stk = new stack()
+stk.push(10)
+stk.push(20)
+stk.push(30)
+stk.push(40)
+stk.pop()
+console.log(stk.peak());
+
+console.log(stk.isempty());
+
+console.log(stk);
 
 
